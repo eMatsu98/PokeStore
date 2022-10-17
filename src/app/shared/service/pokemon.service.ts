@@ -23,7 +23,8 @@ export class PokemonService {
 
   getPokemonGeneric(): Observable<any> {
     const url = this.pokeUrl + 'pokemon/' + this.pokeIndex;
-    const pokemon = this.http.get(url);
+    const pokemon = this.http.get<any>(url);
+    console.log(url);
     console.log('first' + JSON.stringify(pokemon));
     return pokemon;
   }
