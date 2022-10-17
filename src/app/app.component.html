@@ -1,2 +1,10 @@
 <h1>PokeStore</h1>
-<p>This pokemon: {{getPokemonByIndex()}}</p>
+<p>This pokemon:</p>
+<input #pokemonIndex type="number" [min]="1" max="905" (change)="doOnChange(pokemonIndex)">
+<p>name: {{pokemon.name}}</p>
+<p>height: {{pokemon.height}}</p>
+<p>weight: {{pokemon.weight}}</p>
+<p>id: {{pokemon.id}}</p>
+<p>base_experience: {{pokemon.base_experience}}</p>
+<img src="{{pokemon.sprites.other.home.front_default}}" alt="">
+<p>{{pokemonString}}</p>

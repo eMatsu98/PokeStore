@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { PokemonService } from 'src/app/shared/service/pokemon.service';
 
@@ -11,20 +11,25 @@ import { PokemonService } from 'src/app/shared/service/pokemon.service';
 export class AppComponent {
   pokemon: any;
   title = 'poke-store';
+  pokemonString: string = '';
 
   constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(){
-    this.getPokemonByIndex();
+  ngOnInit(): void{
+    // this.getPokemonByIndex(0);
   }
 
   getTitle(){
     return this.title;
   }
 
-  getPokemonByIndex(){
-    const pokemon = this.pokemonService.getPokemonGeneric();
-    console.log(pokemon);
-    return JSON.stringify(pokemon);
+  getPokemonByIndex(pokeId: number){
+    this.pokemon = this.pokemonService.getPokemonGeneric(pokeId);
+    console.log('THIS POKEMON: ' ,this.pokemon.name);
+  }
+  
+  doOnChange(pokeInput: any){
+    this.getPokemonByIndex(pokeInput.value);
+    this.pokemonString = JSON.stringify(this.pokemon);
   }
 }
