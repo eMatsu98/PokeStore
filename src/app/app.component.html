@@ -1,21 +1,24 @@
-<h1>PokeStore</h1>
-<p>This pokemon:</p>
-<div>
-    <label for="pokedex">Choose a Pokemon:</label>
-    <select #Pokedex name="pokedex" id="pokedex" [(ngModel)]="currentPokemon" (change)="getPokemonByName()">
-        <option value="{{currPokemon.name}}" *ngFor="let currPokemon of pokedex">{{currPokemon.name}}</option>
-    </select>
-</div>
-<br>
-<input #pokemonIndex type="number" [(ngModel)]="pokeIndex" [min]="1" max="905" (change)="getPokemonByIndex()" placeholder="1 to 905">
-<p>name: {{pokemon.name}}</p>
-<p>height: {{pokemon.height}}</p>
-<p>weight: {{pokemon.weight}}</p>
-<p>id: {{pokemon.id}}</p>
-<p>base_experience: {{pokemon.base_experience}}</p>
-<img src="{{pokeImg}}" alt="">
-<form (submit)="refresh()">
-    <!-- <input type="text" name="refresh" placeholder="Refresh..."> -->
-    <button>Refresh</button>
-</form>
-<p>{{pokeTest}}</p>
+<app-header></app-header>
+<main>
+    <p>This pokemon:</p>
+    <div>
+        <label for="pokedex">Choose a Pokemon:</label>
+        <select #Pokedex name="pokedex" id="pokedex" [(ngModel)]="currentPokemon" (change)="getPokemonByName()">
+            <option value="{{currPokemon.name}}" *ngFor="let currPokemon of pokedex">{{currPokemon.name}}</option>
+        </select>
+    </div>
+    <br>
+    <input #pokemonIndex type="number" [(ngModel)]="pokeIndex" [min]="1" max="905" (change)="getPokemonByIndex()" placeholder="1 to 905">
+    <p>name: {{pokemon.name}}</p>
+    <p>height: {{pokemon.height}}</p>
+    <p>weight: {{pokemon.weight}}</p>
+    <p>id: {{pokemon.id}}</p>
+    <p>base_experience: {{pokemon.base_experience}}</p>
+    <img src="{{pokeImg}}" alt="">
+    <form (submit)="refresh()">
+        <!-- <input type="text" name="refresh" placeholder="Refresh..."> -->
+        <button>Refresh</button>
+    </form>
+    <p>{{pokeTest}}</p>
+</main>
+<app-footer></app-footer>
