@@ -1,8 +1,7 @@
 export interface PokemonGeneric {
-    forms: [
-        {
-            name: string,
-            url: string
-        }
-    ]
+    name: string,
+    height: number,
+    weight: number,
+    id: number,
+    base_experience: number
 }
