@@ -11,25 +11,59 @@ import { PokemonService } from 'src/app/shared/service/pokemon.service';
 export class AppComponent {
   pokemon: any;
   title = 'poke-store';
-  pokemonString: string = '';
+  pokeTest: any;
+  pokeIndex: number = 1;
+  pokeImg: string = '';
+
+  pokedex: any;
+  currentPokemon: string = '';
 
   constructor(private pokemonService: PokemonService) {}
 
-  ngOnInit(): void{
-    // this.getPokemonByIndex(0);
+  ngOnInit(){
+    this.getPokemonByIndex();
+    this.getAllPokedex();
   }
 
-  getTitle(){
-    return this.title;
+  getPokemonByIndex(){
+    this.pokemonService.getPokemonGenericByIndex(this.pokeIndex).subscribe(
+      pokemon =>{
+        this.pokemon = pokemon;
+        this.pokeTest = JSON.stringify(pokemon);
+        this.pokeImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png';
+        this.currentPokemon = pokemon.name;
+      }
+    )
+    console.log('by index')
   }
 
-  getPokemonByIndex(pokeId: number){
-    this.pokemon = this.pokemonService.getPokemonGeneric(pokeId);
-    console.log('THIS POKEMON: ' ,this.pokemon.name);
+  getPokemonByName(){
+    this.pokemonService.getPokemonGenericByName(this.currentPokemon).subscribe(
+      pokemon =>{
+        this.pokemon = pokemon;
+        this.pokeTest = JSON.stringify(pokemon);
+        this.pokeImg = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/' + pokemon.id + '.png';
+        this.pokeIndex = pokemon.id;
+      }
+    )
+    console.log('by name')
   }
-  
-  doOnChange(pokeInput: any){
-    this.getPokemonByIndex(pokeInput.value);
-    this.pokemonString = JSON.stringify(this.pokemon);
+
+  getAllPokedex(){
+    this.pokemonService.getPokedex().subscribe(
+      pokedex => {
+        this.pokedex = pokedex.results;
+      }
+    )
+  }
+
+  changePokemon(pokemon: string){
+    this.currentPokemon = pokemon;
+    this.refresh();
+  }
+
+  refresh(){
+    this.pokeTest = this.currentPokemon;
+    this.currentPokemon = this.pokemon.name;
   }
 }

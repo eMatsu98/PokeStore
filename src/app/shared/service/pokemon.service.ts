@@ -17,17 +17,22 @@ export class PokemonService {
     base_experience: 0,
   };
 
+  currentPokemon: any;
+
   pokeUrl: string = "https://pokeapi.co/api/v2/";
 
   constructor(private http: HttpClient) { }
 
-  getPokemonGeneric(pokeId: number): PokemonGeneric {
-    const url = this.pokeUrl + 'pokemon/' + pokeId;
-    (this.http.get<any>(url).subscribe(pokemon =>{
-      this.genericPokemon = this.constructPokemon(pokemon, this.genericPokemon);
-      this.genericPokemon = pokemon;
-    }));
-    return this.genericPokemon;
+  getPokemonGenericByIndex(pokeId: number): Observable<any> {
+    return this.http.get<any>(this.pokeUrl + 'pokemon/' + pokeId);
+  }
+
+  getPokemonGenericByName(pokeName: string): Observable<any> {
+    return this.http.get<any>(this.pokeUrl + 'pokemon/' + pokeName);
+  }
+
+  getPokedex(): Observable<any>{
+    return this.http.get<any>(this.pokeUrl + 'pokemon?limit=905&offset=0');
   }
 
   constructPokemon(p: any, gp: PokemonGeneric): PokemonGeneric{
