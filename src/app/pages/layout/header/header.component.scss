@@ -1,29 +1,53 @@
 @font-face {
     font-family: 'Pokemon Hollow';
-    src: url('/src/assets/Pokemon Hollow.ttf') format('truetype');
-    // font-weight: normal;
-    // font-style: normal;
+    src: local('Pokemon Hollow') url('/src/assets/Pokemon Hollow.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
   @font-face { 
     font-family: 'Pokemon Solid';
-    src: local('Pokemon Solid') format('truetype') url('poke-store/src/assets/Pokemon Solid.ttf') format('truetype');
+    src: local('Pokemon Solid') format('truetype') url('/src/assets/Pokemon Solid.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
 
 header {
-    height: 80px;
+    height: 120px;
     width: 100%;
     background-color: #e91e63;
     color: rgb(51, 51, 51);
     line-height: 80px;
     box-sizing: border-box;
-    padding: 0 20px;
-    >h1{
-        font-size: 50px;
-        font-family: 'Pokemon Solid';
+    padding: 30px 20px;
+    >div{
+        >.PokemonSolid{
+            margin: 0px 0px 0px 5px;
+            font-size: 50px;
+            font-family: 'Pokemon Solid';
+            color: #FFCB05;
+            position: absolute;
+            display: inline;
+            // z-index: -1;
+        }
+        >.PokemonHollow{
+            margin: 0px 0px 0px 5px;
+            font-size: 50px;
+            font-family: 'Pokemon Hollow';
+            color: #3466af;
+            position: absolute;
+            display: block;
+            z-index:1
+        }
+        .PokemonSolid:nth-child(3){
+            font-size: 52px;
+            font-family: 'Pokemon Solid';
+            color: #3466af;
+            position: absolute;
+            display: contents;
+            z-index: -1;
+        }
     }
 
     h1 {
