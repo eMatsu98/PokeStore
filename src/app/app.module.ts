@@ -9,7 +9,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/layout/header/header.component';
 import { FooterComponent } from './pages/layout/footer/footer.component';
 import { SideBarComponent } from './pages/layout/side-bar/side-bar.component';
+// import { SignupComponent } from 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LoginComponent } from './pages/login/login.component';
+import { TestComponent } from './pages/pokemon/test/test.component';
+import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     SideBarComponent,
+    ProfileComponent,
+    LoginComponent,
+    TestComponent,
+    ForbiddenComponent,
   ],
   imports: [
     BrowserModule,
