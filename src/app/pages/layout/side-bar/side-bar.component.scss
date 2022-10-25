@@ -1,0 +1,27 @@
+// .example-container {
+//     // width: 400px;
+//     // height: 200px;
+//     // margin: 10px;
+//     border: 1px solid #555;
+//   }
+
+//   .side-bar{
+//     width: 20%;
+//   }
+
+  .example-container {
+    // width: 500px;
+    // height: 800px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }

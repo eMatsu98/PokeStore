@@ -15,6 +15,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/pokemon/test/test.component';
 import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component'
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
