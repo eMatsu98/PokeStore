@@ -5,9 +5,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss']
 })
-export class SideBarComponent implements OnInit {
 
+export class SideBarComponent implements OnInit {
+  
+  events: string[] = [];
+  opened: boolean = true;
+  
+  shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(window.location.host);
+  
   showFiller = false;
+
   constructor() { }
 
   ngOnInit(): void {

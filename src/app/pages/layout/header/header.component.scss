@@ -1,73 +1,91 @@
-@font-face {
-    font-family: 'Pokemon Hollow';
-    src: local('Pokemon Hollow') url('/src/assets/Pokemon Hollow.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-  @font-face { 
-    font-family: 'Pokemon Solid';
-    src: local('Pokemon Solid') format('truetype') url('/src/assets/Pokemon Solid.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
+// border: 2px solid rgb(0, 0, 0, 0.4);
 
 header {
-    height: 120px;
-    width: 100%;
-    background-color: #e91e63;
-    color: rgb(51, 51, 51);
-    line-height: 80px;
-    box-sizing: border-box;
-    padding: 30px 20px;
-    >div{
-        >.PokemonSolid{
-            margin: 0px 0px 0px 5px;
-            font-size: 50px;
-            font-family: 'Pokemon Solid';
-            color: #FFCB05;
-            position: absolute;
-            display: inline;
-            // z-index: -1;
-        }
-        >.PokemonHollow{
-            margin: 0px 0px 0px 5px;
-            font-size: 50px;
-            font-family: 'Pokemon Hollow';
-            color: #3466af;
-            position: absolute;
-            display: block;
-            z-index:1
-        }
-        .PokemonSolid:nth-child(3){
-            font-size: 52px;
-            font-family: 'Pokemon Solid';
-            color: #3466af;
-            position: absolute;
-            display: contents;
-            z-index: -1;
-        }
-    }
+height: 100px;
+width: 100%;
+background-color: #62C8E0;
+color: rgb(35, 35, 35);
+line-height: 80px;
+box-sizing: border-box;
+}
 
-    h1 {
-        margin: 0;
-        display: inline-block;
-    }
+.pokeheader{
+    margin: auto;
+    width: 60%;
+}
 
-    ul {
-
-        list-style: none;
-        float: right;
-        margin: 0;
-
-        li {
-            display: inline-block;
-            margin-left: 10px;
-
-            a {
-                color: rgb(51, 51, 51);
-            }
-        };
+.pokelogo{
+    height: 100px;
+    padding: auto;
+    display: inline-block;
+    width: 16%;
+    margin: 0;
+    &:hover{
+        cursor: pointer;
     }
 }
+
+img {
+    position: relative;
+    display: block;
+    margin: auto;
+    &.pokeball {
+        height: 60px;
+        top: 10px;
+    }
+    &.pokestore {
+        height: 40px;
+        top: -15px;
+    }
+}
+
+.search-bar{
+    display: inline-block;
+    position: relative;
+    width: 58%;
+    top: -40px;
+    margin: auto;
+    // border: 2px solid rgb(0, 0, 0, 0.4);
+    >div{
+        position: relative;
+        display: block;
+        margin: auto;
+        width: 90%;
+        // border: 2px solid rgb(0, 0, 0, 0.4);
+        input{
+            width: 90%;
+            height: 30px;
+            top: 250px; 
+        }
+        button{
+            display: inline;
+            position: relative;
+            top: 6px;
+            height: 36px;
+        }
+    }
+}
+
+.nav{
+    display: inline-block;
+    position: relative;
+    top: -45px;
+    width: 24%;
+    left: 0;
+}
+
+ul {
+
+    list-style: none;
+    margin: 0;
+
+    li {
+        display: inline-block;
+        margin-left: 10px;
+
+        a {
+            color: rgb(35, 35, 35);
+        }
+    };
+}
+

@@ -1,33 +1,15 @@
-<!-- <mat-drawer-container class="example-container">
-    Side Bar
-    <mat-drawer class="side-bar" mode="side" opened>
-        PokeStore
-    </mat-drawer>
+<mat-sidenav-container class="example-container">
 
-    Main
-    <mat-drawer-content>
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    Sidenav content
+  </mat-sidenav>
 
-</mat-drawer-container> -->
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">.</button></p>
 
-<mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
-    </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
-    </div>
-    
     <div>
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
-  
-  </mat-drawer-container>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

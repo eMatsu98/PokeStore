@@ -1,8 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: #353535;
+
 body{
-    color: rgb(218, 218, 218);
-    background-color: rgb(43, 43, 43);
+    color: #FEFEFE;
+    background-color: $primary;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 html, body { height: 100%; }
+
+// Colores:
+// white: FEFEFE
+// light gray: DEDEDE
+// dark gray: 353535
+// light blue: ABF0FF
+// blue: 62C8E0
+// dark blue: 217F94
