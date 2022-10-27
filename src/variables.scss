@@ -1,0 +1,23 @@
+
+@mixin border-radius {
+    border-radius: 0 30px 30px 0;
+}
+
+@mixin testB{
+    border: 2px solid rgb(0, 0, 0, 0.5);
+}
+
+@mixin testW{
+    border: 2px solid rgb(255, 255, 255, 0.5);
+}
+
+$primary: #61DAFB;
+$primary8: rgb(97, 218, 251, 0.8);
+$primary5: rgb(97, 218, 251, 0.5);
+$primary2: rgb(97, 218, 251, 0.2);
+$lighter: #FFFFFF;
+$light: #EBECF0;
+$neutral: #32363E;
+$dark: #282C34;
+$darker: #20232A;
+

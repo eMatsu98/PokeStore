@@ -1,7 +1,11 @@
+@import '/src/variables.scss';
+
 footer {
     height: 80px;
     line-height: 80px;
     box-sizing: border-box;
     text-align: center;
-    background-color: #217F94;
+    color: $light;
+    border-top: 1px solid $dark;
+    background-color: $darker;
 }

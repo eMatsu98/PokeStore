@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { PokemonService } from 'src/app/shared/service/pokemon.service';
+import { PokemonService } from 'src/app/shared/services/pokemon.service';
 
 @Component({
   selector: 'app-root',

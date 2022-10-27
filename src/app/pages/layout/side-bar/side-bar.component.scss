@@ -1,4 +1,38 @@
-mat-sidenav {
-  width: 20%;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+@import '/src/variables.scss';
+
+
+.mat-drawer-container{
+  background-color: $dark;
 }
+
+mat-sidenav {
+  width: 15%;
+  background: linear-gradient(90deg, $primary5 0%, $primary2 100%);
+  @include border-radius;
+  border-right: 1px solid $dark;
+  // background: $primary5;
+  color: $primary;
+}
+
+mat-sidenav-content{
+  color: $light;
+  border: 0px solid $darker;
+  background-color: $dark;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  >.side-button{
+    position: absolute;
+    display: inline;
+    background-color: $dark;
+    height: 100%;
+    @include border-radius;
+    width: 35px;
+    &:hover{
+      // background-color: $primary;
+      background: linear-gradient(90deg, $primary5 0%, $primary2 100%);
+      
+      cursor: pointer;
+    }
+  }
+}
+

@@ -1,8 +1,12 @@
 <header>
     <div class="pokeheader">
-        <div routerLink="pokemon" class="pokelogo" (mouseenter)="rotate()" (mouseleave)="rotate()">
-            <img class="pokeball" src="./assets/img/pokeball.png" alt="img" [@rotatedState]='state'>
-            <img class="pokestore" src="./assets/img/pokelogo.png" alt="img">
+        <div routerLink="pokemon" class="logo">
+            <div (mouseenter)="rotate()" (mouseleave)="rotate()">
+                <img class="pokelogo" src="./assets/img/pokelogo.png" alt="img">
+                <img class="pokeball" src="./assets/img/pokeball.png" alt="img" [@rotatedState]='state'>
+                <img class="storeball" src="./assets/img/pokeball.png" alt="img" [@rotatedState]='state'>
+            </div>
+                <!-- <img class="pokestore" src6="./assets/img/pokestore.png" alt="img"> -->
         </div>
         <div class="search-bar">
             <div>

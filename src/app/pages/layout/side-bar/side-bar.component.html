@@ -1,11 +1,13 @@
 <mat-sidenav-container class="example-container">
 
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+  <mat-sidenav class="side-bar" #sidenav mode="side" [(opened)]="opened">
     Sidenav content
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.toggle()">.</button></p>
+    <div class="side-button" (click)="sidenav.toggle()">
+      <!-- <button class="hide" mat-button (click)="sidenav.toggle()"></button> -->
+    </div>
 
     <div>
       <router-outlet></router-outlet>
