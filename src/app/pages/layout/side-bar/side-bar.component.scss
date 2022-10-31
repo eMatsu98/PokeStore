@@ -2,34 +2,34 @@
 
 
 .mat-drawer-container{
-  background-color: $dark;
+  background-color: $primary;
 }
 
 mat-sidenav {
   width: 15%;
-  background: linear-gradient(90deg, $primary5 0%, $primary2 100%);
+  background: linear-gradient(90deg, $main5 0%, $main2 100%);
   @include border-radius;
-  border-right: 1px solid $dark;
-  // background: $primary5;
-  color: $primary;
+  border-right: 1px solid $primary;
+  // background: $main5;
+  color: $main;
 }
 
 mat-sidenav-content{
-  color: $light;
-  border: 0px solid $darker;
-  background-color: $dark;
+  color: $secondary-dark;
+  border: 0px solid $primary-dark;
+  background-color: $primary;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
   >.side-button{
     position: absolute;
     display: inline;
-    background-color: $dark;
+    background-color: $primary;
     height: 100%;
     @include border-radius;
     width: 35px;
     &:hover{
-      // background-color: $primary;
-      background: linear-gradient(90deg, $primary5 0%, $primary2 100%);
+      // background-color: $main;
+      background: linear-gradient(90deg, $main5 0%, $main2 100%);
       
       cursor: pointer;
     }

@@ -3,10 +3,10 @@
 header {
 height: 100px;
 width: 100%;
-color: $lighter;
+color: $secondary;
 line-height: 80px;
 box-sizing: border-box;
-background-color: $darker;
+background-color: $primary-dark;
 }
 
 .pokeheader{
@@ -103,7 +103,7 @@ ul {
         display: inline-block;
         margin-left: 10px;
         a{
-            color: $lighter;
+            color: $secondary;
         }
     };
 }
