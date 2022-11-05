@@ -1,19 +1,32 @@
 @host=http://localhost:5000/users
 
-POST {{host}}
+POST {{host}}/postone
 Content-Type: application/json
 
-{
-    "id":"string"
-}
+    {
+        "id":"entrando",
+        "descripcion":"asdfasdf"
+    }
+
 
 ###send request
 GET {{host}}/getone
 
 ###send request
-DELETE {{host}}/delete
+PUT {{host}}/putone
 Content-Type: application/json
 
 {
-    "test":"test"
+    "name": "string",
+    "plot": "improved"
 }
+
+
+###send request
+DELETE {{host}}/delete
+Content-Type: application/json
+
+    {
+        "test":"entrando",
+        "name":"bejarano"
+    }

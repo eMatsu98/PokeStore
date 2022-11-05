@@ -12,6 +12,8 @@ const port= process.env.port ||5000;
 
 let db;
 
+app.use(express.json());
+
 app.use('/',apiRoutes)
 
 app.get('',(req,res)=>{

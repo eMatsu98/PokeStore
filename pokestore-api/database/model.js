@@ -12,11 +12,11 @@ class BaseModel{
     postOne(param){
         this.collection.insertOne(param);
     }
-    updateOne(param){
+    updateOne(param, updatedparam, options){
+        this.collection.updateOne(param,updatedparam, options);
 
     }
     delOne(param){
-        // var myquery = {test : 'test'};
         this.collection.deleteOne(param);
     }
 
