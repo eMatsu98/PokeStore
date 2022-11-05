@@ -21,7 +21,8 @@ class userController{
     }
     deleteOne(req,res){
         const delone = new model();
-        console.log('entre');
+        let {test} = req.body;
+        console.log(test);
         delone.delOne((err,result)=>{
             if(err){
                 res.send([])

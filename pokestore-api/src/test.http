@@ -1,0 +1,19 @@
+@host=http://localhost:5000/users
+
+POST {{host}}
+Content-Type: application/json
+
+{
+    "id":"string"
+}
+
+###send request
+GET {{host}}/getone
+
+###send request
+DELETE {{host}}/delete
+Content-Type: application/json
+
+{
+    "test":"test"
+}

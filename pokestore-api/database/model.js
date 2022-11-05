@@ -16,9 +16,8 @@ class BaseModel{
 
     }
     delOne(param){
-        var myquery = {name : 'test'};
-        console.log('entre');
-        this.collection.deleteOne(myquery);
+        // var myquery = {test : 'test'};
+        this.collection.deleteOne(param);
     }
 
 }
