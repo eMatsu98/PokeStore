@@ -1,0 +1,11 @@
+@import '/src/variables.scss';
+
+footer {
+    height: 80px;
+    line-height: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    color: $secondary-dark;
+    border-top: 1px solid $primary;
+    background-color: $primary-dark;
+}
