@@ -7,9 +7,9 @@
 /bazel-out
 
 # Node
-/node_modules
-npm-debug.log
-yarn-error.log
+/pokestore/node_modules
+/pokestore/npm-debug.log
+/pokestore/yarn-error.log
 
 # IDEs and editors
 .idea/
@@ -29,13 +29,13 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
+/pokestore/.angular/cache
+/pokestore/.sass-cache/
+/pokestore/connect.lock
+/pokestore/coverage
+/pokestore/libpeerconnection.log
+/pokestore/testem.log
+/pokestore/typings
 
 # System files
 .DS_Store
