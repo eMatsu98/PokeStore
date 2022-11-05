@@ -11,6 +11,8 @@
 /pokestore/npm-debug.log
 /pokestore/yarn-error.log
 
+/pokestore-api/node_modules
+
 # IDEs and editors
 .idea/
 .project
