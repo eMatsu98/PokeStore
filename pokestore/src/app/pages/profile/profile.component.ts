@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  text: string = '';
+
   constructor() {}
 
   ngOnInit(): void {
+  }
+
+  profilePicture(){
+    this.text = 'created';
   }
 
 }

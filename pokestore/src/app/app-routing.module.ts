@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'pokemon', pathMatch: 'full' },
   { path: 'pokemon' , component: TestComponent},
   { path: 'login' , component: LoginComponent},
+  { path: 'profile' , component: ProfileComponent},
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['admin', 'manager']} },
   { path: 'forbidden', component: ForbiddenComponent, canActivate: [AuthGuard] }
 ];
