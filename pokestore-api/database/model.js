@@ -19,6 +19,10 @@ class BaseModel{
     delOne(param){
         this.collection.deleteOne(param);
     }
+    encuentraOne(param){
+
+        this.collection.findOne(param);
+    }
 
 }
 module.exports=BaseModel;

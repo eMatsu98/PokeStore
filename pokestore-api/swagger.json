@@ -1,0 +1,18 @@
+{
+    "swaggerDefinition":{
+        "swagger": "2.0",
+        "info":{
+            "description": "Pokemon API as in Global Trade Station. (GTS) - es cannon. ",
+            "version": "1.0.0",
+            "title":"ITESO MEMEGEN API",
+            "contact":{
+                "author": "Souless and Ematsu",
+                "email":"notengo@gmail"
+            }
+            
+        },
+        "basePath":"/",
+        "host":"localhost:3000"
+    },
+    "apis":["./index.js", "src/**/routes.js"]
+}
