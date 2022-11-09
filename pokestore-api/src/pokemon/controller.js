@@ -71,6 +71,64 @@ class userController{
         }
     }
 
+    login(req, res) {
+        const m = new model();
+        let {
+            name,
+            email,
+            password
+        } = req.body;
+        m.findOne({
+            email
+        }).then(datos => {
+            if (
+                datos &&
+                ((datos.password == password && datos.email == email) ||
+                    datos.name == name)
+            ) {
+                console.log('sup');
+                let token = jwt.sign({
+                        _id: datos.id,
+                        name: datos.name,
+                        email: datos.email,
+                        password: datos.password,
+                    },
+                    'a', {
+                        expiresIn: 48 * 48
+                    }
+
+                );
+                console.log("entre");
+                res.send(token);
+            } else {
+                res.send("Bad credentials");
+            }
+        }).catch((err) => {
+            res.send(err)
+        })
+    }
+
+    auth(req, res, next) {
+        let token = req.get("x-auth");
+        if (token) {
+          jwt.verify(token, 'a', (err, payload) => {
+            if (err) {
+              if (err.name == "TokenExpiredError") {
+                res.status(401).send({ error: "add time to token" });
+              } else {
+                res.status(401).send({ error: "Token no válido" });
+              }
+              return;
+            }
+
+            res.send("welcome validated");
+            // next();
+          });
+        } else {
+          res.status(401).send({ error: "no autenticado, falta token" });
+          return;
+        }
+      }
 };
 
 module.exports = new userController();
