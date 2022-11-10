@@ -27,6 +27,10 @@ export class PokemonService {
     return this.http.get<any>(this.pokeUrl + 'pokemon/' + pokeId);
   }
 
+  getEnamorus(): Observable<any> {
+    return this.http.get<any>('https://www.serebii.net/pokedex-swsh/enamorus/');
+  }
+
   getPokemonGenericByName(pokeName: string): Observable<any> {
     return this.http.get<any>(this.pokeUrl + 'pokemon/' + pokeName);
   }
