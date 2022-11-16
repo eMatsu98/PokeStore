@@ -50,16 +50,17 @@ main{
 
         >.icons{
             width: 150px;
-            margin: auto
-            ;
+            margin: auto;
             >div{
                 height: 50px;
                 width: 50px;
                 position: relative;
                 display: inline-block;
-                margin: 0 10px;
+                margin: 0 5px;  
                 border-radius: 50%;
+                border: solid 3px $main;
                 &:hover{
+                    border: solid 3px $secondary;
                     background-color: $main;
                     cursor: pointer;
                 }
@@ -70,9 +71,14 @@ main{
                     }
                 }
             }
+            .facebook{
+                float: right;
+            }
         }
         p{
             margin-top: 20px;
         }
     }
 }
+
+// .mat-form-field.mat-form-field-invalid .mat-form-field-label
