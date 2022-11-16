@@ -7,7 +7,7 @@ const database = require('./database')
 require('dotenv').config();
 
 const apiRoutes=require('./src/api')
-const port= process.env.port ||5000;
+const port= process.env.port || 5000;
 
 const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
@@ -43,7 +43,7 @@ database.connect().then(client=>{
     database.db(db);
 
     app.listen(port,()=>{
-        console.log('app is running');
+        console.log('app is running on port ' + port);
 
     })
 }).catch(err=>{
