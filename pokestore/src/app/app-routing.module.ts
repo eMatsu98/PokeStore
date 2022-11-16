@@ -10,9 +10,10 @@ import { RoleGuard } from './shared/guards/role.guard';
 
 const routes: Routes = [  
   { path: '', redirectTo: 'pokemon', pathMatch: 'full' },
-  { path: 'pokemon' , component: TestComponent},
-  { path: 'login' , component: LoginComponent},
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['admin', 'manager']} },
+  { path: 'pokemon' , component: TestComponent },
+  { path: 'login' , component: LoginComponent },
+  // { path: 'profile/:user', component: ProfileComponent, canActivate: [AuthGuard, RoleGuard], data: {roles: ['admin', 'manager']} },
+  { path: 'profile/:user', component: ProfileComponent },
   { path: 'forbidden', component: ForbiddenComponent, canActivate: [AuthGuard] }
 ];
 
