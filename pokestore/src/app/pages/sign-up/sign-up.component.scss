@@ -1,0 +1,12 @@
+@import '/src/variables.scss';
+
+main{
+    margin: 50px;
+    @include testW;
+    >.sign-up{
+        @include testW;
+        margin: auto;
+        width: 500px;
+        height: 600px;
+    }
+}

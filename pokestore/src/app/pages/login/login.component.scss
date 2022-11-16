@@ -1,0 +1,78 @@
+@import '/src/variables.scss';
+
+main{
+    margin: 50px;
+    >.login{
+        background-color: $primary-dark;
+        border-radius: 20px;
+        margin: auto;
+        width: 420px;
+        height: 520px;
+        padding: 40px;
+        >h1{
+            font-weight:  500;
+        }
+        .example-form {
+            min-width: 150px;
+            max-width: 500px;
+            width: 100%;
+            &:hover{
+                cursor: text;
+            }
+        }
+        
+        .example-full-width {  
+            width: 90%;
+            margin-left: 5%;
+        }
+
+        button{
+            margin-top: 20px;
+            background-color: $primary-dark;
+            border: solid 2px $main;
+            color: $main;
+            width: 80%;
+            margin-left: 10%;
+            font-size: large;
+            &:hover{
+                color: $secondary;
+                background: $main;
+            }
+        }
+
+        hr{
+            margin-top: 10px;
+        }
+
+        h4{
+            text-align: center;
+        }
+
+        >.icons{
+            width: 150px;
+            margin: auto
+            ;
+            >div{
+                height: 50px;
+                width: 50px;
+                position: relative;
+                display: inline-block;
+                margin: 0 10px;
+                border-radius: 50%;
+                &:hover{
+                    background-color: $main;
+                    cursor: pointer;
+                }
+                >img{
+                    height: 50px;
+                    &:hover{
+                        filter: grayscale(100%) brightness(10) saturate(10); 
+                    }
+                }
+            }
+        }
+        p{
+            margin-top: 20px;
+        }
+    }
+}

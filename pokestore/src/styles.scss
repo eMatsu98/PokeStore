@@ -8,3 +8,17 @@ body{
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 html, body { height: 100%; }
+
+a{
+    color: $primary;
+    cursor: pointer;
+    &:visited{
+        color: $main8;
+    }
+    &:hover{
+        color: $main5;
+    }
+    &:active{
+        color: $secondary;
+    }
+}
