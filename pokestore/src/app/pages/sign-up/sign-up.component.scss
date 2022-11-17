@@ -26,6 +26,23 @@ main{
             margin-left: 5%;
         }
 
+        .mat-input-element .mat-form-field-label {
+            caret-color: $main;
+            color: $main;
+        }
+        >div{
+            >.email-form{
+                >.mat-form-field.mat-form-field-invalid .mat-form-field-label {
+                    color: #32e92b;
+                    font-size: 600px;
+                    background-color: red;
+                }
+            }
+        }
+        .mat-error { //listo
+            color: #32e92b;
+        }
+
         button{
             margin-top: 20px;
             background-color: $primary-dark;
@@ -57,17 +74,37 @@ main{
                 position: relative;
                 display: inline-block;
                 margin: 0 5px;  
-                border-radius: 50%;
-                border: solid 3px $main;
-                &:hover{
-                    border: solid 3px $secondary;
-                    background-color: $main;
-                    cursor: pointer;
-                }
                 >img{
-                    height: 50px;
-                    &:hover{
-                        filter: grayscale(100%) brightness(10) saturate(10); 
+                    border-radius: 20%;
+                    height: 36px;
+                    &.default{
+                        border: solid 3px $main;
+                        padding: 6px;
+                        display: inline-block;
+                        z-index: 3;
+                        &:hover{
+                            z-index: 0;
+                            // opacit y: 0;
+                            // display: none;
+                            border: solid 3px $secondary;
+                            cursor: pointer;
+                            // filter: grayscale(100%) brightness(10) saturate(10); 
+                            // background-color: $main;
+                        }
+                    }
+                    &.hidden{
+                        border: solid 9px $main;
+                        display: none;
+                        opacity: 0;
+                        &:hover{
+                            z-index: 5;
+                            display: inline;
+                            opacity: 100%;
+                            border: solid 3px $warn;
+                            cursor: pointer;
+                            // filter: grayscale(100%) brightness(10) saturate(10); 
+                            background-color: $main;
+                        }
                     }
                 }
             }

@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$poke-theme-primary: mat-palette(rgb(97, 218, 251));
+$poke-theme-accent: mat-palette(rgb(251, 130, 97), A200, A100, A400);
+$poke-theme-warn: mat-palette(rgb(240, 13, 89));
+
+// $poke-light-theme: mat.define-light-theme((
+//     color: (
+//         primary: $poke-theme-primary,
+//         accent: $poke-theme-accent,
+//         warn: $poke-theme-warn,
+//     ),
+// ));
+
+$poke-theme: mat-light-theme($poke-theme-primary, $poke-theme-accent, $poke-theme-warn);
+
+@include angular-material-theme($candy-app-theme);
+// @include mat.all-component-themes($poke-light-theme);

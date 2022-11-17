@@ -2,20 +2,22 @@
     <div class="sign-up">
         <h1>SIGN UP</h1>
         <h2>Email</h2>
-        <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                Please enter a valid email address
-                </mat-error>
-                <mat-error *ngIf="emailFormControl.hasError('required')">
-                    Email is <strong>required</strong>
-                </mat-error>
-            </mat-form-field>
-        </form>
+        <div>
+            <form class="email-form">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                    Please enter a valid email address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+        </div>
         <h2>Password</h2>
-        <form class="example-form">
+        <form class="password-form">
             <mat-form-field class="example-full-width" appearance="fill">
                 <mat-label>Password</mat-label>
                 <input type="password" matInput [formControl]="passwordFormControl" placeholder="Ex. Password.1">
@@ -35,10 +37,12 @@
         <h4>OR</h4>
         <div class="icons">
             <div class="google">
-                <img src="./assets/img/google-icon.png" alt="">
+                <img class="default" src="./assets/img/google-icon.png" alt="">
+                <img class="hidden" src="./assets/img/google-icon-inverted.png" alt="">
             </div>
             <div class="facebook">
-                <img src="./assets/img/facebook-icon.png" alt="">
+                <img class="default" src="./assets/img/facebook-icon.png" alt="">
+                <img class="hidden" src="./assets/img/facebook-icon-inverted.png" alt="">
             </div>
         </div>
         <p>Already have an account? <a href="/login">LOGIN</a></p>
