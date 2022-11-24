@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
-
+import * as socketIo from 'socket.io-client'
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: './test.component.html',
@@ -9,6 +10,12 @@ import { PokemonService } from 'src/app/shared/services/pokemon.service';
 })
 
 export class TestComponent {
+  socketClient: any;
+shared() {
+  this.socketClient.emit('share',{
+    name:'el meme'
+  });
+}
   poke = {
     name : '',
     height : 0,
@@ -40,11 +47,16 @@ export class TestComponent {
   myPokedex: any = '';
   currentPokemon: string = '';
 
+
+
   constructor(private pokemonService: PokemonService) {}
 
   ngOnInit(){
     this.getPokemonByIndex();
     this.getAllPokedex();
+
+    this.socketClient= socketIo.io(environment.apiUrl);
+  
   }
 
   enamorous(){
