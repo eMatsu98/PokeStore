@@ -5,6 +5,9 @@ const app=express();
 
 const uri='mongodb+srv://ITESO:iteso1234@cluster0.u3koub4.mongodb.net/?retryWrites=true&w=majority'
 
+
+
+
 async function connect(){
     try{
         await mongoose.connect(uri);
