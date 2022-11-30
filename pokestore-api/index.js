@@ -3,7 +3,8 @@
 //callback
 const express = require('express');
 const app= express();
-const database = require('./database')
+const database = require('./database');
+const cors = require('cors');
 require('dotenv').config();
 
 const apiRoutes=require('./src/api')
@@ -31,6 +32,7 @@ var storage = multer.diskStorage({
 })
 var upload = multer({ storage: storage })
 
+app.use(cors());
 app.use(express.json());
 app.use('/a',express.static('/b'));
 app.use('/',apiRoutes)

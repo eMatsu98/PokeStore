@@ -15,9 +15,15 @@ class userController{
     }
     //done
     async create(req,res){
+        console.log('entered');
         const create = new model();
-        let {id, descripcion}= req.body;
-        let obj = {id:id, descripcion:descripcion}
+        let {name, email, id, photoUrl}= req.body;
+        let obj = {
+            name:name,
+            email:email,
+            id:id,
+            photoUrl:photoUrl
+        }
         try{
             await create.postOne(obj)
         }catch(e){
