@@ -1,27 +1,44 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { Router } from '@angular/router';
+
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent implements OnInit {
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  passwordFormControl = new FormControl('', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]);
-  usernameFormControl = new FormControl('', [Validators.required]);
+export class SignUpComponent {
 
   user: any;
   loggedIn: any;
 
-  constructor(private authService: SocialAuthService) { }
-
-  ngOnInit() {
+  constructor(private authService: SocialAuthService,
+    private router: Router, 
+    private socialAuthService: SocialAuthService, 
+    private auth: AuthService
+    ) {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
-      console.log(this.user);
+      const obj = {
+        name : user.name, 
+        email : user.email, 
+        id : user.id, 
+        photoUrl : user.photoUrl
+      };
+      this.newUser(obj);
     });
+  }
+
+  newUser(user:any){
+    console.log('newUser');
+    this.auth.createUser(user).subscribe(
+      res =>{
+        console.log('res: ');
+        console.log(res);
+      }
+    )
   }
 }

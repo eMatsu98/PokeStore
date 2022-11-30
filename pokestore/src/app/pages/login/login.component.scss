@@ -10,11 +10,21 @@ main{
         height: 480px;
         padding: 40px;
 
-        >h1{
-            font-weight:  500;
-            font-size: 300%;
-            text-align: center;
-            // margin-bottom: 150px;
+        >.text{
+            height: 80px;
+            font-size: 22px;
+            font-weight: 500;
+            background-color: $main;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            >h1{
+                position: relative;
+                top: 25px;
+                color: $secondary;
+                font-weight:  500;
+                font-size: 150%;
+                text-align: center;
+            }
         }
 
         >.icons{
@@ -22,19 +32,6 @@ main{
                 height: 80px;
                 width: 250px;
                 margin: 120px auto 200px auto;
-                >.text{
-                    height: 80px;
-                    font-size: 22px;
-                    font-weight: 500;
-                    background-color: $main;
-                    margin-bottom: 20px;
-                    border-radius: 20px;
-                    >p{
-                        position: relative;
-                        top: 30px;
-                        color: $secondary;
-                    }
-                }
                 >.btn{
                     width: 32px;
                     margin: auto;
