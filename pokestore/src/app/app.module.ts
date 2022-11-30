@@ -21,7 +21,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/pokemon/test/test.component';
 import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -34,7 +33,6 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     LoginComponent,
     TestComponent,
     ForbiddenComponent,
-    SignUpComponent,
   ],
   imports: [
     ReactiveFormsModule,

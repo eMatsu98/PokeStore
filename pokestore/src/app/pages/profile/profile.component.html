@@ -1,14 +1,14 @@
 <main>
     <div class="profileTop">
         <div class="profileCoverImg">
-            <img src="https://i.pinimg.com/originals/be/c2/04/bec204e648af50f69bc63eb78dd8daa3.png" alt="?">
+            <img src="{{usr.backgroundUrl}}" alt="?">
         </div>
         <div class="profilePicture">
             <div></div>
-            <img src="https://i.pinimg.com/originals/de/6f/2d/de6f2d475d8de984cb0760be479f1018.jpg" alt="?">
+            <img src="{{usr.photoUrl}}" alt="?">
         </div>
         <div class="profileName">
-            <h1>eMatsu98</h1>
+            <h1>{{usr.name}}</h1>
         </div>
     </div>
     <form (submit)="profilePicture()">
@@ -16,4 +16,5 @@
         <button>Refresh</button>
     </form>
     <p>this.text = {{text}}</p>
+    <button (click)="shared()">socket</button>
 </main>

@@ -18,6 +18,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 export class HeaderComponent implements OnInit {
 
   state: string = 'default';
+  id: string = '';
 
   constructor() { }
 
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.id = '/profile/' + sessionStorage.getItem("id");
   }
 
 }

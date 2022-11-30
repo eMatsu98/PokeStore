@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
-import { SocialAuthService, GoogleLoginProvider } from '@abacritt/angularx-social-login';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { SocialAuthService } from '@abacritt/angularx-social-login';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,24 +11,46 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class LoginComponent{
-  [x: string]: any;
 
   user: any;
   loggedIn: any;
 
-  constructor(private authService: SocialAuthService, private router: Router, private socialAuthService: SocialAuthService, private http: HttpClient) {
+  constructor(private authService: SocialAuthService,
+    private router: Router, 
+    private socialAuthService: SocialAuthService, 
+    private activatedRoute: ActivatedRoute,
+    private auth: AuthService
+    ) {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
-      console.log(user.idToken);
+      const obj = {
+        name : user.name, 
+        email : user.email, 
+        id : user.id, 
+        photoUrl : user.photoUrl,
+      };
+      this.singUp(obj);
     });
   }
 
-  postUser(user: any): Observable<any>{
-    const url="http://localhost:5000/api/postone";
-    const headers = { "content-type":"application/json" }
-
-    const req = JSON.stringify(user);
-    return this.http.post(url , req, {'headers' : headers});
+  singUp(user:any){
+    this.auth.getUsers().subscribe(
+      users=>{
+        if(!(users.find((x:any) => x.id === user.id))){
+          this.auth.createUser(user).subscribe(
+            res =>{
+              console.log('res: ');
+              console.log(res);
+            }
+          )
+        }
+        sessionStorage.setItem('idToken', user.idToken);
+        sessionStorage.setItem('id', user.id);
+        this.router.navigate(['../profile/' + this.user.id], {
+          relativeTo: this.activatedRoute
+        });
+      }
+    )
   }
 }

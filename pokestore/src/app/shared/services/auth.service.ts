@@ -7,19 +7,27 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
+  url : string ="http://localhost:5000";
+
   constructor(private http: HttpClient) { }
 
   isLoggedIn(): boolean {
-    const token = localStorage.getItem('token') || '';
+    const token = sessionStorage.getItem('idToken') || '';
     return !!token;
   }
 
   createUser(user: any): Observable<any>{
-    console.log('trying to post...');
-    const url="http://localhost:5000/users/postone";
+    const potstUrl = this.url + "/users/postone";
     const headers = { "content-type":"application/json" }
 
     const req = JSON.stringify(user);
-    return this.http.post(url , req, {'headers' : headers});
+    return this.http.post(potstUrl , req, {'headers' : headers});
   }
+
+  getUsers(): Observable<any>{
+    const getAllUrl = this.url + "/users/getone";
+    return this.http.get(getAllUrl);
+  }
+
+
 }

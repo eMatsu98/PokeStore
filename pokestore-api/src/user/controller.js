@@ -22,7 +22,8 @@ class userController{
             name:name,
             email:email,
             id:id,
-            photoUrl:photoUrl
+            photoUrl:photoUrl,
+            backgroundUrl : 'https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png',
         }
         try{
             await create.postOne(obj)
