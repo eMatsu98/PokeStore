@@ -65,7 +65,12 @@ main{
                         margin: 80px;
                         display: inline;
                         left: 0;
-                        background-color: $main5;
+                    }
+                    >.accepted{
+                        background-color: $main;
+                    }
+                    >.wrong{
+                        background-color: $warn;
                     }
                     >img{
                         height: 480px;
@@ -94,7 +99,7 @@ main{
                     }
                     :hover{
                         border: solid 5px $secondary;
-                        background-color: $main5;
+                        background-color: $main;
                         color: $secondary;
                         cursor: pointer;
                     }
