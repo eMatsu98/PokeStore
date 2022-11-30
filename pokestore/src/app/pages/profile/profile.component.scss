@@ -60,7 +60,15 @@ main{
         display: inline-block;
         top: 100px;
         right: 260px;
+        .socket{
+            display: inline;
+            margin-top: -5px;
+            height: 35px;
+            position: absolute;
+            top: 15px;
+        }
         >button{
+            margin: 10px;
             color: $secondary;
             border: solid 2px $secondary;
             background-color: $primary-dark;

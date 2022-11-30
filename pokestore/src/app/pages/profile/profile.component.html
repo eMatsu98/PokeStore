@@ -13,16 +13,15 @@
             </div>
             <div class="profileEdit">
                 <button (click)="openDialog()"><mat-icon fontIcon="build"></mat-icon></button>
+                <button class="socket" (click)="shared()">socket</button>
             </div>
         </div>
         <!-- <form (submit)="profilePicture()">
             <!-- <input type="text" name="refresh" placeholder="Refresh..."> 
             <button>Refresh</button>
         </form>
-        <p>this.text = {{text}}</p>
-        <button (click)="shared()">socket</button> -->
+        <!-- <p>this.text = {{text}}</p> -->
     </div>
-    <button (click)="print()">print</button>
     <div class="cards">
         <div class="big" *ngFor="let pkmn of usr.pokemon">
             <div class="card" [ngClass]="{'active': pk == p}" *ngFor="let p of pkmn">
