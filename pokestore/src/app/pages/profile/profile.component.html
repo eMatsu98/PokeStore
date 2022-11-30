@@ -25,11 +25,16 @@
     <button (click)="print()">print</button>
     <div class="cards">
         <ul>
-            <li *ngFor="let pkmn of usr.pokemon">
-                <div [ngClass]="{'active': pk == p}" *ngFor="let p of pkmn">
-                    <p  [(ngModel)]="pk">{{p}}</p>
-                </div>
-            </li>
+            <div class="big">
+                <li *ngFor="let pkmn of usr.pokemon">
+                    <div class="card" [ngClass]="{'active': pk == p}" *ngFor="let p of pkmn">
+                        <div class="pokemon">
+                            <p  [(ngModel)]="pk">{{p}}</p>
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{p}}.png" alt="">
+                        </div>
+                    </div>
+                </li>
+            </div>
         </ul>
     </div>
 </main>

@@ -2,7 +2,6 @@
 
 main{
     margin: 50px;
-    height: 800px;
 }
 .user{
     @include testW;
@@ -77,5 +76,27 @@ main{
             color: $main;
             cursor: pointer;
         }
+    }
+}
+.cards{
+    .big{
+        display: inline-block;
+        @include testW;
+        .card{
+            position: relative;
+            margin: auto;
+            display: inline;
+            @include testW;
+            >.pokemon{
+                @include testB;
+                margin: 20px;
+                background-color: red;
+                display: inline;
+                position: relative;
+            }
+        }
+    }
+    img{
+        height: 200px;
     }
 }
