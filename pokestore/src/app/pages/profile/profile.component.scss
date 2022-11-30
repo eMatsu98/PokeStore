@@ -4,19 +4,15 @@ main{
     margin: 50px;
 }
 .user{
-    @include testW;
 }
 .cards{
-    @include testW;
 }
 
 .profileTop{
     height: 380px;
     display: block;
     position: relative;
-    @include testW;
     >.profileCoverImg{
-        @include testW;
         background-color: $secondary;
         display: inline-block;
         position: absolute;
@@ -30,7 +26,6 @@ main{
         }
     }
     >.profilePicture{
-        @include testW;
         margin: 20px;
         top: 130px;
         display: inline-block;
@@ -51,7 +46,6 @@ main{
         }
     }
     >.profileName{
-        @include testW;
         display: inline-block;
         position: relative;
         top: 50px;
@@ -80,23 +74,29 @@ main{
 }
 .cards{
     .big{
-        display: inline-block;
-        @include testW;
         .card{
             position: relative;
+            background-color: $main8;
             margin: auto;
-            display: inline;
-            @include testW;
+            display: inline-block;
+            margin: 50px 20px;
+            height: 250px;
+            width: 250px;
+            border-radius: 20px;
             >.pokemon{
-                @include testB;
-                margin: 20px;
-                background-color: red;
+                margin: auto;
+                padding: 50px;
                 display: inline;
                 position: relative;
+                >p{
+                    text-align: center;
+                    font-size: larger;
+                    font-weight: bold;
+                }
+                >img{
+                    height: 200px;
+                }
             }
         }
-    }
-    img{
-        height: 200px;
     }
 }

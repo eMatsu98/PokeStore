@@ -46,10 +46,6 @@ export class DialogContentComponent implements OnInit {
     }
     this.auth.putUser(obj).subscribe(
       res=>{
-        // this.router.navigate(['/profile/' + this.id])
-        // .then(() => {
-        //   window.location.reload();
-        // });
         console.log(res);
       }
     )
