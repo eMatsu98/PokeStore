@@ -1,0 +1,14 @@
+<main>
+    <h1 mat-dialog-title>Edit Profile</h1>
+    <br>
+    <div class="user" mat-dialog-content>
+        <h3>Username: <input type="text" [(ngModel)]="name" value="{{name}}"></h3>
+        <h3>User Image URL: <input type="text" [(ngModel)]="photoUrl" value="{{photoUrl}}"></h3>
+        <h3>Cover Image URL: <input type="text" [(ngModel)]="backgroundUrl" value="{{backgroundUrl}}"></h3>
+    </div>
+    
+    <div mat-dialog-actions>
+        <button class="cancel" mat-button mat-dialog-close>Cancel</button>
+        <button class="confirm" (click)="editUser()" mat-button [mat-dialog-close]="'CLOSE'">Confirm</button>
+    </div>
+</main>

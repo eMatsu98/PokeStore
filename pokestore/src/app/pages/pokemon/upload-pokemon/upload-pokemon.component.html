@@ -1,0 +1,47 @@
+<main>
+    <div>
+        <div>
+
+            <div class="myPokemon">
+                <label for="pokedex"><h1>Choose your Pokemon:</h1></label>
+                    <div>
+                        <div class="name">
+                            <select #Pokedex name="pokedex" id="pokedex" [(ngModel)]="myCurrent" (change)="getMyPokemonByName()">
+                                <option value="{{myCurrent.name}}" *ngFor="let myCurrent of pokedex">{{myCurrent.name}}</option>
+                            </select>
+                        </div>
+                    <div class="index">
+                        <input #pokemonIndex type="number" [(ngModel)]="myPokemon.id" [min]="1" max="905" (change)="getMyPokemonByIndex()" placeholder="1 to 905">
+                    </div>
+                    </div>
+                <div class="img">
+                    <div [ngClass]="myClass === true ? 'accepted' : 'wrong'"></div>
+                    <img src="{{myPokemon.img}}" alt="">
+                </div>
+            </div>
+            <div class="wantedPokemon">
+                <label for="pokedex"><h1>Choose wanted Pokemon:</h1></label>
+                    <div>
+                        <div class="name">
+                            <select #Pokedex name="pokedex" id="pokedex" [(ngModel)]="wantedCurrent" (change)="getWantedPokemonByName()">
+                                <option value="{{wantedCurrent.name}}" *ngFor="let wantedCurrent of pokedex">{{wantedCurrent.name}}</option>
+                            </select>
+                        </div>
+                    <div class="index">
+                        <input #pokemonIndex type="number" [(ngModel)]="wantedPokemon.id" [min]="1" max="905" (change)="getWantedPokemonByIndex()" placeholder="1 to 905">
+                    </div>
+                    </div>
+                <div class="img">
+                    <div [ngClass]="wantedClass === true ? 'accepted' : 'wrong'"></div>
+                    <img src="{{wantedPokemon.img}}" alt="">
+                </div>
+            </div>
+            <br>
+            <div class="btn">
+                <div>
+                    <button (click)="selectPokemon()">Select these Pokemon</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

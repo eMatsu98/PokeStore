@@ -53,18 +53,18 @@ router.post('/postone',controller.create);
  *     description: This will update a user
  *     parameters:
  *       - in: query
- *         name: ramon
- *         description: ramons last name
+ *         name: id
+ *         description: update by id
  *         updateobj: what will rewrite in the db
  *         schema:
  *           type: string
  *     responses:
  *       200:
- *         description: list of all users 
+ *         description: update user by id
  *       400:
  *         description: error. 
  */
-router.put('/putone', controller.update);
+router.put('/putone/:id', controller.update);
 
 
 /**

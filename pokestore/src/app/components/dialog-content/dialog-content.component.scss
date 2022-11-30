@@ -1,0 +1,37 @@
+@import '/src/variables.scss';
+
+main{
+    width: 550px;
+    background-color: $primary-dark;
+    border: solid 30px $primary-dark;
+    margin: -24px;
+    >h1{
+        text-align: center;
+        font-size: 50px;
+        margin: 15px 30px;
+        background-color: $main;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    >.user{
+        padding: 20px;
+        margin: 0 30px;
+        bottom: 0;
+        >h3{
+            >input{
+                background-color: $primary;
+                color: $secondary;
+                width: 200px;
+                height: 30px;
+                border: solid 5px $main8;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    >div{
+        >.confirm{
+            background-color: $main5;
+        }
+    }
+}

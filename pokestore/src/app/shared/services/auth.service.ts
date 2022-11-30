@@ -1,14 +1,41 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  url : string ="http://localhost:5000";
+
+  constructor(private http: HttpClient) { }
 
   isLoggedIn(): boolean {
-    const token = localStorage.getItem('token') || '';
+    const token = sessionStorage.getItem('idToken') || '';
     return !!token;
   }
+
+  createUser(user: any): Observable<any>{
+    const potstUrl = this.url + "/users/postone";
+    const headers = { "content-type":"application/json" }
+
+    const req = JSON.stringify(user);
+    return this.http.post(potstUrl , req, {'headers' : headers});
+  }
+
+  getUsers(): Observable<any>{
+    const getAllUrl = this.url + "/users/getone";
+    return this.http.get(getAllUrl);
+  }
+
+  putUser(user: any): Observable<any>{
+    const potstUrl = this.url + "/users/putone/" + user.id;
+    const headers = { "content-type":"application/json" }
+
+    const req = JSON.stringify(user);
+    return this.http.put(potstUrl , req, {'headers' : headers});
+  }
+
+
 }

@@ -15,9 +15,16 @@ class userController{
     }
     //done
     async create(req,res){
+        console.log('entered');
         const create = new model();
-        let {id, descripcion}= req.body;
-        let obj = {id:id, descripcion:descripcion}
+        let {name, email, id, photoUrl}= req.body;
+        let obj = {
+            name:name,
+            email:email,
+            id:id,
+            photoUrl:photoUrl,
+            backgroundUrl : 'https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png',
+        }
         try{
             await create.postOne(obj)
         }catch(e){
@@ -28,10 +35,14 @@ class userController{
     }
 
     async update(req,res){
-        const update= new model();
-        let{name, plot} = req.body;
-        let obj ={name:name}
-        let updatedobj = {$set:{plot:plot}}
+        const update = new model();
+        let{name, photoUrl, backgroundUrl, id} = req.body;
+        let obj ={
+            name:name,
+            photoUrl:photoUrl,
+            backgroundUrl:backgroundUrl
+        }
+        let updatedobj = {$set:{id:id}}
         let options = {upsert:true}
         try{
             await update.updateOne(obj,updatedobj,options)

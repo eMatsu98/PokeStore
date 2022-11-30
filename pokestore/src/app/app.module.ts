@@ -7,6 +7,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, FacebookLoginProvider } from '@abacritt/angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +22,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/pokemon/test/test.component';
 import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { UploadPokemonComponent } from './pages/pokemon/upload-pokemon/upload-pokemon.component';
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 
 
 @NgModule({
@@ -31,7 +36,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     LoginComponent,
     TestComponent,
     ForbiddenComponent,
-    SignUpComponent,
+    UploadPokemonComponent,
+    DialogContentComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -43,9 +49,33 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    SocialLoginModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '544901441477-vl5r75anujvuvbegij621h7j07ug6nua.apps.googleusercontent.com'
+            )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('clientId')
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
