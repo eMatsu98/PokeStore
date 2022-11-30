@@ -1,0 +1,105 @@
+@import '/src/variables.scss';
+
+main{
+    width: 100%;
+    >div{
+        width: 100%;
+        margin: 30px 0;
+        text-align: center;
+        >div{
+            display: inline-block;
+            h1{
+                text-align: center;
+            }
+            >div{
+                position: relative;
+                border-radius: 50px;
+                padding: 20px;
+                background-color: $primary-dark;
+                margin: 20px;
+                display: inline-block;
+                >div{
+                    width: 100%;
+                    >div{
+                        display: inline-block;
+                        height: 50px;
+                        margin: 10px;
+                    }
+                }
+                .name{
+                    >select{
+                        width: 250px;
+                        height: 50px;
+                        padding: 0 20px;
+                        font-size: larger;
+                        border-radius: 50px;
+                        color: $secondary;
+                        background-color: $primary;
+                        @include testW;
+                    }
+                }
+                .index{
+                    left: 0;
+                    
+                    >input{
+                        right: 0;
+                        height: 28px;
+                        padding: 10px;
+                        font-size: larger;
+                        border-radius: 50px;
+                        color: $secondary;
+                        background-color: $primary;
+                        @include testW;
+                    }
+                }
+                >.img{
+                    height: 480px;
+                    width: 480px;
+                    display: inline-block;
+                    position: relative;
+                    >div{
+                        border-radius: 50px;
+                        position: absolute;
+                        height: 320px;
+                        width: 320px;
+                        margin: 80px;
+                        display: inline;
+                        left: 0;
+                        background-color: $main5;
+                    }
+                    >img{
+                        height: 480px;
+                        right: 10px;
+                        display: flex;
+                        position: absolute;
+                    }
+                }
+            }
+            >.btn{
+                position: relative;
+                width: 90%;
+                display: inline-block;
+                background-color: $primary;
+                >div{
+                    >button{
+                        border: solid 5px $main;
+                        background-color: $primary-dark;
+                        color: $main;
+                        font-weight: bold;
+                        border-radius: 50px;
+                        font-size: larger;
+                        padding: 0 20px;
+                        height: 80px;
+                        margin: auto;
+                    }
+                    :hover{
+                        border: solid 5px $secondary;
+                        background-color: $main5;
+                        color: $secondary;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,13 +4,14 @@ import { profile } from 'console';
 import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component';
 import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/pokemon/test/test.component';
+import { UploadPokemonComponent } from './pages/pokemon/upload-pokemon/upload-pokemon.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { RoleGuard } from './shared/guards/role.guard';
 
 const routes: Routes = [  
   { path: '', redirectTo: 'pokemon', pathMatch: 'full' },
-  { path: 'pokemon' , component: TestComponent, canActivate:[AuthGuard]},
+  { path: 'pokemon' , component: UploadPokemonComponent, canActivate:[AuthGuard]},
   { path: 'login' , component: LoginComponent },
   { path: 'profile/:user', component: ProfileComponent, canActivate: [AuthGuard]},
   //{ path: 'profile/:user', component: ProfileComponent },
