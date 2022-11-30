@@ -2,118 +2,31 @@
 
 main{
     margin: 50px;
-    >.sign-up{
+    >.account{
         background-color: $primary-dark;
-        border-radius: 20px;
+        border-radius: 15px;
         margin: auto;
         width: 420px;
-        height: 520px;
+        height: 480px;
         padding: 40px;
+
         >h1{
             font-weight:  500;
-        }
-        .example-form {
-            min-width: 150px;
-            max-width: 500px;
-            width: 100%;
-            &:hover{
-                cursor: text;
-            }
-        }
-        
-        .example-full-width {  
-            width: 90%;
-            margin-left: 5%;
-        }
-
-        .mat-input-element .mat-form-field-label {
-            caret-color: $main;
-            color: $main;
-        }
-        >div{
-            >.email-form{
-                >.mat-form-field.mat-form-field-invalid .mat-form-field-label {
-                    color: #32e92b;
-                    font-size: 600px;
-                    background-color: red;
-                }
-            }
-        }
-        .mat-error { //listo
-            color: #32e92b;
-        }
-
-        button{
-            margin-top: 20px;
-            background-color: $primary-dark;
-            border: solid 2px $main;
-            color: $main;
-            width: 80%;
-            margin-left: 10%;
-            font-size: large;
-            &:hover{
-                color: $secondary;
-                background: $main;
-            }
-        }
-
-        hr{
-            margin-top: 10px;
-        }
-
-        h4{
+            font-size: 300%;
             text-align: center;
+            // margin-bottom: 150px;
         }
 
         >.icons{
-            width: 150px;
-            margin: auto;
             >div{
-                height: 50px;
-                width: 50px;
-                position: relative;
-                display: inline-block;
-                margin: 0 5px;  
-                >img{
-                    border-radius: 20%;
-                    height: 36px;
-                    &.default{
-                        border: solid 3px $main;
-                        padding: 6px;
-                        display: inline-block;
-                        z-index: 3;
-                        &:hover{
-                            z-index: 0;
-                            // opacit y: 0;
-                            // display: none;
-                            border: solid 3px $secondary;
-                            cursor: pointer;
-                            // filter: grayscale(100%) brightness(10) saturate(10); 
-                            // background-color: $main;
-                        }
-                    }
-                    &.hidden{
-                        border: solid 9px $main;
-                        display: none;
-                        opacity: 0;
-                        &:hover{
-                            z-index: 5;
-                            display: inline;
-                            opacity: 100%;
-                            border: solid 3px $warn;
-                            cursor: pointer;
-                            // filter: grayscale(100%) brightness(10) saturate(10); 
-                            background-color: $main;
-                        }
-                    }
-                }
-            }
-            .facebook{
-                float: right;
+                height: 30px;
+                width: 250px;
+                margin: 200px auto;
+                
             }
         }
         p{
-            margin-top: 20px;
+            text-align: center;
         }
     }
 }

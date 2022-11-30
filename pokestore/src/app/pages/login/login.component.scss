@@ -2,83 +2,48 @@
 
 main{
     margin: 50px;
-    >.login{
+    >.account{
         background-color: $primary-dark;
-        border-radius: 20px;
+        border-radius: 15px;
         margin: auto;
         width: 420px;
-        height: 520px;
+        height: 480px;
         padding: 40px;
+
         >h1{
             font-weight:  500;
-        }
-        .example-form {
-            min-width: 150px;
-            max-width: 500px;
-            width: 100%;
-            &:hover{
-                cursor: text;
-            }
-        }
-        
-        .example-full-width {  
-            width: 90%;
-            margin-left: 5%;
-        }
-
-        button{
-            margin-top: 20px;
-            background-color: $primary-dark;
-            border: solid 2px $main;
-            color: $main;
-            width: 80%;
-            margin-left: 10%;
-            font-size: large;
-            &:hover{
-                color: $secondary;
-                background: $main;
-            }
-        }
-
-        hr{
-            margin-top: 10px;
-        }
-
-        h4{
+            font-size: 300%;
             text-align: center;
+            // margin-bottom: 150px;
         }
 
         >.icons{
-            width: 150px;
-            margin: auto;
             >div{
-                height: 50px;
-                width: 50px;
-                position: relative;
-                display: inline-block;
-                margin: 0 5px;  
-                border-radius: 50%;
-                border: solid 3px $main;
-                &:hover{
-                    border: solid 3px $secondary;
+                height: 80px;
+                width: 250px;
+                margin: 120px auto 200px auto;
+                >.text{
+                    height: 80px;
+                    font-size: 22px;
+                    font-weight: 500;
                     background-color: $main;
-                    cursor: pointer;
-                }
-                >img{
-                    height: 50px;
-                    &:hover{
-                        filter: grayscale(100%) brightness(10) saturate(10); 
+                    margin-bottom: 20px;
+                    border-radius: 20px;
+                    >p{
+                        position: relative;
+                        top: 30px;
+                        color: $secondary;
                     }
                 }
-            }
-            .facebook{
-                float: right;
+                >.btn{
+                    width: 32px;
+                    margin: auto;
+                    position: relative;
+                }
             }
         }
         p{
-            margin-top: 20px;
+            text-align: center;
         }
     }
 }
-
-// .mat-form-field.mat-form-field-invalid .mat-form-field-label

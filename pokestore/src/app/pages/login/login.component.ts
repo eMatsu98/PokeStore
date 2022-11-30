@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import { SocialAuthService, GoogleLoginProvider } from '@abacritt/angularx-social-login';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-login',
@@ -7,6 +10,15 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent{
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  passwordFormControl = new FormControl('', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]);
+
+  user: any;
+  loggedIn: any;
+
+  constructor(private authService: SocialAuthService, private router: Router, private socialAuthService: SocialAuthService) {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.loggedIn = (user != null);
+      console.log('souless se la come completa');
+    });
+  }
 }

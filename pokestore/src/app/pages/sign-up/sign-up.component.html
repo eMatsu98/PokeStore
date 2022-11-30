@@ -1,48 +1,22 @@
 <main>
-    <div class="sign-up">
+    <div class="account">
         <h1>SIGN UP</h1>
-        <h2>Email</h2>
-        <div>
-            <form class="email-form">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                    Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </form>
-        </div>
-        <h2>Password</h2>
-        <form class="password-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Password</mat-label>
-                <input type="password" matInput [formControl]="passwordFormControl" placeholder="Ex. Password.1">
-                <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
-                Please enter a valid password (min 8 characters, special character and a number)
-                </mat-error>
-                <mat-error *ngIf="passwordFormControl.hasError('required')">
-                    Password is <strong>required</strong>
-                </mat-error>
-                <mat-error *ngIf="passwordFormControl.hasError('pattern')">
-                    Password must be 8 characters long and contain at least one capital letter, one number and one special character
-                </mat-error>
-            </mat-form-field>
-        </form>
-        <button mat-raised-button>SIGN UP</button>
-        <hr>
-        <h4>OR</h4>
         <div class="icons">
-            <div class="google">
-                <img class="default" src="./assets/img/google-icon.png" alt="">
-                <img class="hidden" src="./assets/img/google-icon-inverted.png" alt="">
-            </div>
-            <div class="facebook">
-                <img class="default" src="./assets/img/facebook-icon.png" alt="">
-                <img class="hidden" src="./assets/img/facebook-icon-inverted.png" alt="">
+            <div>
+                <script src="https://accounts.google.com/gsi/client" async defer></script>
+                <div id="g_id_onload"
+                   data-client_id="544901441477-vl5r75anujvuvbegij621h7j07ug6nua.apps.googleusercontent.com"
+                   
+                   data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                   data-type="standard"
+                   data-size="large"
+                   data-theme="outline"
+                   data-text="sign_in_with"
+                   data-shape="rectangular"
+                   data-logo_alignment="left">
+                </div>
             </div>
         </div>
         <p>Already have an account? <a href="/login">LOGIN</a></p>

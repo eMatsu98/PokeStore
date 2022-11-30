@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
-import * as socketIo from 'socket.io-client'
+import * as socketIo from 'socket.io-client';
 import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
