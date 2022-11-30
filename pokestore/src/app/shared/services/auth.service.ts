@@ -29,5 +29,13 @@ export class AuthService {
     return this.http.get(getAllUrl);
   }
 
+  putUser(user: any): Observable<any>{
+    const potstUrl = this.url + "/users/putone/" + user.id;
+    const headers = { "content-type":"application/json" }
+
+    const req = JSON.stringify(user);
+    return this.http.put(potstUrl , req, {'headers' : headers});
+  }
+
 
 }

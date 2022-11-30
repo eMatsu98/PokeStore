@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
 import { GoogleLoginProvider, FacebookLoginProvider } from '@abacritt/angularx-social-login';
@@ -22,6 +23,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { TestComponent } from './pages/pokemon/test/test.component';
 import { ForbiddenComponent } from './pages/error/forbidden/forbidden.component';
 import { UploadPokemonComponent } from './pages/pokemon/upload-pokemon/upload-pokemon.component';
+import { DialogContentComponent } from './components/dialog-content/dialog-content.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { UploadPokemonComponent } from './pages/pokemon/upload-pokemon/upload-po
     TestComponent,
     ForbiddenComponent,
     UploadPokemonComponent,
+    DialogContentComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -47,7 +50,8 @@ import { UploadPokemonComponent } from './pages/pokemon/upload-pokemon/upload-po
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatDialogModule
   ],
   providers: [
     {

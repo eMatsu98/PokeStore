@@ -1,23 +1,35 @@
 <main>
-    <div class="profileTop">
-        <div class="profileCoverImg">
-            <img src="{{usr.backgroundUrl}}" alt="?">
+    <div class="user">
+        <div class="profileTop">
+            <div class="profileCoverImg">
+                <img src="{{usr.backgroundUrl}}" alt="?">
+            </div>
+            <div class="profilePicture">
+                <div></div>
+                <img src="{{usr.photoUrl}}" alt="?">
+            </div>
+            <div class="profileName">
+                <h1>{{usr.name}}</h1>
+            </div>
+            <div class="profileEdit">
+                <button (click)="openDialog()"><mat-icon fontIcon="build"></mat-icon></button>
+            </div>
         </div>
-        <div class="profilePicture">
-            <div></div>
-            <img src="{{usr.photoUrl}}" alt="?">
-        </div>
-        <div class="profileName">
-            <h1>{{usr.name}}</h1>
-        </div>
-        <div class="profileEdit">
-            <button type="submit"><mat-icon fontIcon="build"></mat-icon></button>
-        </div>
+        <!-- <form (submit)="profilePicture()">
+            <!-- <input type="text" name="refresh" placeholder="Refresh..."> 
+            <button>Refresh</button>
+        </form>
+        <p>this.text = {{text}}</p>
+        <button (click)="shared()">socket</button> -->
     </div>
-    <form (submit)="profilePicture()">
-        <!-- <input type="text" name="refresh" placeholder="Refresh..."> -->
-        <button>Refresh</button>
-    </form>
-    <p>this.text = {{text}}</p>
-    <button (click)="shared()">socket</button>
+    <button (click)="print()">print</button>
+    <div class="cards">
+        <ul>
+            <li *ngFor="let pkmn of usr.pokemon">
+                <div [ngClass]="{'active': pk == p}" *ngFor="let p of pkmn">
+                    <p  [(ngModel)]="pk">{{p}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </main>

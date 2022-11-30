@@ -4,6 +4,13 @@ main{
     margin: 50px;
     height: 800px;
 }
+.user{
+    @include testW;
+}
+.cards{
+    @include testW;
+}
+
 .profileTop{
     height: 380px;
     display: block;
@@ -61,13 +68,13 @@ main{
         top: 100px;
         right: 260px;
         >button{
-            color: $main;
+            color: $secondary;
+            border: solid 2px $secondary;
             background-color: $primary-dark;
-            border: solid 2px $main;
             border-radius: 5px;
         }
         :hover{
-            color: $secondary;
+            color: $main;
             cursor: pointer;
         }
     }

@@ -35,10 +35,14 @@ class userController{
     }
 
     async update(req,res){
-        const update= new model();
-        let{name, plot} = req.body;
-        let obj ={name:name}
-        let updatedobj = {$set:{plot:plot}}
+        const update = new model();
+        let{name, photoUrl, backgroundUrl, id} = req.body;
+        let obj ={
+            name:name,
+            photoUrl:photoUrl,
+            backgroundUrl:backgroundUrl
+        }
+        let updatedobj = {$set:{id:id}}
         let options = {upsert:true}
         try{
             await update.updateOne(obj,updatedobj,options)
