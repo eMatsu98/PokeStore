@@ -34,6 +34,7 @@ this.socketClient.emit('share',{
     private activatedRoute: ActivatedRoute,
     private auth: AuthService,
     public dialog: MatDialog,
+    private route: Router,
     private pokemonService: PokemonService
     ) {}
 
@@ -45,6 +46,11 @@ this.socketClient.emit('share',{
     this.socketClient = socketIo.io(environment.apiUrl);
 
     this.id = '' + sessionStorage.getItem('id');
+    // this.activatedRoute.queryParams.subscribe(params => {
+    //     console.log('aaaaaaaaaaaaaaaaaaaaaaaaa' + params);
+    //     this.id = '' + params['id'];
+    //   }
+    // );
 
     this.auth.getUsers().subscribe(
       users => {
@@ -54,6 +60,7 @@ this.socketClient.emit('share',{
     );
     console.log(this.usr);
     this.getMyPokemon();
+
   }
 
   profilePicture(){

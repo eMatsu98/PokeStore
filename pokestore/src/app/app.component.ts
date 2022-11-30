@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 
+import socket, { io } from 'socket.io-client'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,7 +19,7 @@ export class AppComponent {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
-      console.log(this.user);
+
     });
   }
 }

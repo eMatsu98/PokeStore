@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  url : string ="http://localhost:5000";
+  url : string ="http://apipaefinal-env.eba-kjqsq4p2.us-east-2.elasticbeanstalk.com";
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class AuthService {
   }
 
   putUser(user: any): Observable<any>{
-    const potstUrl = this.url + "/users/putone/" + user.id;
+    const potstUrl = this.url + "/users/putone"
     const headers = { "content-type":"application/json" }
 
     const req = JSON.stringify(user);

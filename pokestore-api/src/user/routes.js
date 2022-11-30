@@ -64,7 +64,7 @@ router.post('/postone',controller.create);
  *       400:
  *         description: error. 
  */
-router.put('/putone/:id', controller.update);
+router.put('/putone', controller.update);
 
 
 /**

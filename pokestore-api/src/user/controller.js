@@ -40,7 +40,8 @@ class userController{
         let obj ={
             name:name,
             photoUrl:photoUrl,
-            backgroundUrl:backgroundUrl
+            backgroundUrl:backgroundUrl,
+            id:id
         }
         let updatedobj = {$set:{id:id}}
         let options = {upsert:true}

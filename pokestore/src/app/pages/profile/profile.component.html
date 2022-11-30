@@ -24,10 +24,16 @@
     </div>
     <div class="cards">
         <div class="big" *ngFor="let pkmn of usr.pokemon">
-            <div class="card" [ngClass]="{'active': pk == p}" *ngFor="let p of pkmn">
+            <div class="cardL">
                 <div class="pokemon">
-                    <p  [(ngModel)]="pk">{{p}}</p>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{p}}.png" alt="">
+                    <p>{{pkmn[0]}}</p>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkmn[0]}}.png" alt="">
+                </div>
+            </div>
+            <div class="cardR">
+                <div class="pokemon">
+                    <p>{{pkmn[1]}}</p>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pkmn[1]}}.png" alt="">
                 </div>
             </div>
         </div>

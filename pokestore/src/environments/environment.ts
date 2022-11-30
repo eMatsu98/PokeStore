@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'localhost:5000'
+  apiUrl: 'http://apipaefinal-env.eba-kjqsq4p2.us-east-2.elasticbeanstalk.com/'
 };
 
 /*

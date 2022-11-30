@@ -82,16 +82,15 @@ main{
 }
 .cards{
     .big{
-        .card{
+        >div{
             position: relative;
-            background-color: $main8;
             margin: auto;
             display: inline-block;
             margin: 50px 20px;
             height: 250px;
             width: 250px;
-            border-radius: 20px;
-            >.pokemon{
+            background-color: $main5;
+            .pokemon{
                 margin: auto;
                 padding: 50px;
                 display: inline;
@@ -105,6 +104,12 @@ main{
                     height: 200px;
                 }
             }
+        }
+        .cardL{
+            border-radius: 20px 0px 0px 20px;
+        }
+        .cardR{
+            border-radius: 0px 20px 20px 0px;
         }
     }
 }

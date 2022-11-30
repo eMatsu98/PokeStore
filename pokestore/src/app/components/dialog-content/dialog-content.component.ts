@@ -29,7 +29,7 @@ export class DialogContentComponent implements OnInit {
     this.auth.getUsers().subscribe(
       users => {
         this.usr = users.find((usr:any) => usr.id === this.id);
-        if(users.find((usr:any) => usr.id === this.id)) console.log('true');
+        //if(users.find((usr:any) => usr.id === this.id))
         this.name = this.usr.name;
         this.photoUrl = this.usr.photoUrl;
         this.backgroundUrl = this.usr.backgroundUrl;

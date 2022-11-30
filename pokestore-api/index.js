@@ -79,9 +79,10 @@ database.connect().then(client=>{
     io.on('connection',socket=>{
         console.log('alguien se conecto!');
         socket.on('share',data=>{
-            console.log('alguien compartio informacion',data);
+            console.log('alguien tradeo!',data);
 
             socket.broadcast.emit('onshared',data)
+            
         })
     })
 }).catch(err=>{
