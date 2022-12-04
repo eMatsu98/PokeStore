@@ -7,22 +7,58 @@ main{
         border-radius: 15px;
         margin: auto;
         width: 420px;
-        height: 480px;
+        height: 530px;
         padding: 40px;
+        >.login{
+            >.text{
+                height: 80px;
+                font-size: 22px;
+                font-weight: 500;
+                background-color: $primary;
+                margin-bottom: 20px;
+                border-radius: 20px;
+                >h1{
+                    position: relative;
+                    top: 25px;
+                    color: $secondary;
+                    font-weight:  500;
+                    font-size: 150%;
+                    text-align: center;
+                }
+            }
+            .example-form {
+                min-width: 150px;
+                max-width: 500px;
+                width: 100%;
+                &:hover{
+                    cursor: text;
+                }
+            }
+            
+            .example-full-width {  
+                width: 90%;
+                margin-left: 5%;
+            }
 
-        >.text{
-            height: 80px;
-            font-size: 22px;
-            font-weight: 500;
-            background-color: $main;
-            margin-bottom: 20px;
-            border-radius: 20px;
-            >h1{
-                position: relative;
-                top: 25px;
-                color: $secondary;
-                font-weight:  500;
-                font-size: 150%;
+            button{
+                margin-top: 10px;
+                background-color: $primary-dark;
+                border: solid 2px $main;
+                color: $main;
+                width: 80%;
+                margin-left: 10%;
+                font-size: large;
+                &:hover{
+                    color: $secondary;
+                    background: $main;
+                }
+            }
+
+            hr{
+                margin-top: 30px;
+            }
+
+            h4{
                 text-align: center;
             }
         }
@@ -31,7 +67,8 @@ main{
             >div{
                 height: 80px;
                 width: 250px;
-                margin: 120px auto 200px auto;
+                margin: auto;
+                margin-top: 30px;
                 >.btn{
                     width: 32px;
                     margin: auto;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialAuthService } from '@abacritt/angularx-social-login';
 import { ActivatedRoute, Router } from '@angular/router';
+import {FormControl, Validators} from '@angular/forms';
 
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -11,6 +12,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 
 export class LoginComponent{
+  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  passwordFormControl = new FormControl('', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]);
 
   user: any;
   loggedIn: any;
