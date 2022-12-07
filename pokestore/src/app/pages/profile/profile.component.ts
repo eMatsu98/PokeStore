@@ -57,6 +57,7 @@ this.socketClient.emit('share',{
         this.usr = users.find((usr:any) => usr.id === this.id);
         if(users.find((usr:any) => usr.id === this.id)) console.log('true');
       }
+      
     );
     console.log(this.usr);
     this.getMyPokemon();

@@ -19,9 +19,9 @@ class BaseModel{
     delOne(param){
         this.collection.deleteOne(param);
     }
-    encuentraOne(param){
+    async encuentraOne(param){
 
-        this.collection.findOne(param);
+        return await this.collection.findOne(param);
     }
 
 }

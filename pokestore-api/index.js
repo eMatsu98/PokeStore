@@ -38,7 +38,7 @@ app.use('/a',express.static('/b'));
 app.use('/',apiRoutes)
 
 app.get('',(req,res)=>{
-    console.log('api works');
+    res.send('api works');
 })
 app.use(express.static(__dirname + '/files_to_save'));
 app.use('/uploads', express.static('uploads'));

@@ -1,48 +1,28 @@
 <main>
-    <div class="account">
-        <div class="login">
-            <div class="text">
-                <h1>LOGIN</h1>
-            </div>
-            <h2>Email</h2>
-            <form class="example-form">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-                    Please enter a valid email address
-                    </mat-error>
-                    <mat-error *ngIf="emailFormControl.hasError('required')">
-                        Email is <strong>required</strong>
-                    </mat-error>
-                </mat-form-field>
-            </form>
-            <h2>Password</h2>
-            <form class="example-form">
-                <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Password</mat-label>
-                    <input type="password" matInput [formControl]="passwordFormControl" placeholder="Ex. Password.1">
-                    <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
-                    Please enter a valid password (min 8 characters, special character and a number)
-                    </mat-error>
-                    <mat-error *ngIf="passwordFormControl.hasError('required')">
-                        Password is <strong>required</strong>
-                    </mat-error>
-                    <mat-error *ngIf="passwordFormControl.hasError('pattern')">
-                        Password must be 8 characters long and contain at least one cappital letter, one number and one special character
-                    </mat-error>
-                </mat-form-field>
-            </form>
-            <button mat-raised-button>LOGIN</button>
-            <hr>
-            <h4>OR</h4>
-        </div>
-        <div class="icons">
-            <div>
-                <div class="btn">
-                    <asl-google-signin-button></asl-google-signin-button>
-                </div>
-            </div>
-        </div>
+  <div class="account">
+    <div class="login">
+      <div class="text">
+        <h1>LOGIN</h1>
+      </div>
+      <h2>Email</h2>
+      <form class="example-form">
+        <label> Email                    </label>
+        <input type="text" name="email">
+        <br>
+        <label>Password</label>
+        <input type="text" name="Password">
+      
+      <button (click)="login(user)" mat-raised-button>LOGIN</button>
+    </form>
+      <hr>
+      <h4>OR</h4>
     </div>
+    <div class="icons">
+      <div>
+        <div class="btn">
+          <asl-google-signin-button></asl-google-signin-button>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>

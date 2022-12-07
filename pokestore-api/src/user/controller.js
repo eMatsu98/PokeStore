@@ -1,5 +1,6 @@
 const model= require('./models');
 
+const jwt = require('jsonwebtoken');
 class userController{
 
     //done
@@ -68,21 +69,59 @@ class userController{
         res.send({status:"200"})
         
     }
-    async encuentralogin(req,res){
-        const encuentr = new model();
-        let {name} = req.body
 
-        if(!name){
-            res.status(400);
-        }
-        else{
-            let obj = {name:name}
-            console.log(obj);
-            let resp = await encuentr.encuentraOne(obj);
-            res.send(resp);
-        }
+    async login(req, res) {
+        const m = new model();
+        let {
+            name,
+            email,
+            password
+        } = req.body;
+        m.encuentraOne({
+            email
+        }).then(datos => {
+            if (((datos.password == password && datos.email == email) ||datos.name == name)) {
+                // console.log("entre");
+                let token = jwt.sign({
+                        name: datos.name,
+                        email: datos.email,
+                        password: datos.password
+                    },
+                    'a', {
+                        expiresIn: 48 * 48
+                    }
+
+                );
+                res.status(201).send({token:token, id:datos.id});
+            } else {
+                res.send("Bad credentials");
+            }
+        }).catch((err) => {
+            res.send(err)
+        })
     }
 
+    auth(req, res, next) {
+        let token = req.get("x-auth");
+        if (token) {
+          jwt.verify(token, 'a', (err, payload) => {
+            if (err) {
+              if (err.name == "TokenExpiredError") {
+                res.status(401).send({ error: "add time to token" });
+              } else {
+                res.status(401).send({ error: "Token no válido" });
+              }
+              return;
+            }
+
+            res.send("welcome validated");
+            next();
+          });
+        } else {
+          res.status(401).send({ error: "no autenticado, falta token" });
+          return;
+        }
+      }
 };
 
 module.exports = new userController();

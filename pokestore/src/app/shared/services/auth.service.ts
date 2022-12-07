@@ -9,6 +9,8 @@ export class AuthService {
 
   url : string ="http://apipaefinal-env.eba-kjqsq4p2.us-east-2.elasticbeanstalk.com";
 
+  //localhost:5000
+
   constructor(private http: HttpClient) { }
 
   isLoggedIn(): boolean {
@@ -35,6 +37,13 @@ export class AuthService {
 
     const req = JSON.stringify(user);
     return this.http.put(potstUrl , req, {'headers' : headers});
+  }
+  logUser(user:any): Observable<any>{
+    const logurl = this.url+"/users/login"
+    //const headers = {"content-type":"application/json"}
+    //const req=JSON.stringify(user);
+    return this.http.post(logurl,user);
+
   }
 
 

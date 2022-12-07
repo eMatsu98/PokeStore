@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 
 export class LoginComponent{
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
-  passwordFormControl = new FormControl('', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]);
+  //passwordFormControl = new FormControl('', [Validators.required, Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$")]);
 
   user: any;
   loggedIn: any;
@@ -35,7 +35,28 @@ export class LoginComponent{
       this.singUp(obj);
     });
   }
+  login(user:any){
+    console.log('entre')
+    const obj = {
+      email: 'souless496@gmail.com',
+      password: 'password'
+    }
+    console.log(obj);
 
+    this.auth.logUser(obj).subscribe(res=>{
+      console.log("entre");
+      
+      console.log(res);
+      sessionStorage.setItem('idToken',res.token );
+      console.log(res.id);
+      sessionStorage.setItem('id',res.id);
+      
+      this.router.navigate(['../profile/' + res.id], {
+        relativeTo: this.activatedRoute
+      });
+    })
+    
+  }
   singUp(user:any){
     this.auth.getUsers().subscribe(
       users=>{

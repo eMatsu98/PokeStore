@@ -78,7 +78,7 @@ class userController{
             email,
             password
         } = req.body;
-        m.findOne({
+        m.encuentraOne({
             email
         }).then(datos => {
             if (
